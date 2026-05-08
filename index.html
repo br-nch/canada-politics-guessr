@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>partyguessr</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+ 
+  <h1>Guess Which Political Party the Candidate Ran For</h1>
+ 
+  <div class="scorebar">
+    <div class="stat">
+      <div class="stat-label">Score</div>
+      <div class="stat-value" id="score">0 / 0</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Streak</div>
+      <div class="stat-value" id="streak">0</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Best</div>
+      <div class="stat-value" id="best">0</div>
+    </div>
+  </div>
+ 
+  <div class="card">
+    <div class="photo-wrap">
+      <img id="photo" src="" alt="politician photo" />
+    </div>
+    <div class="party-grid" id="party-grid"></div>
+    <div class="feedback" id="feedback"></div>
+    <button class="next-btn" id="next-btn">Next →</button>
+  </div>
+ 
+  <button class="reset-btn" onclick="reset()">Reset</button>
+ 
+  <script src="scripts.js"></script>
+ 
+</body>
+</html>
