@@ -82,6 +82,7 @@ const PARTIES = [
     document.getElementById("best").textContent = "0";
     load();
   }
-  
+
+document.getElementById("reset-btn").onclick = reset
   document.getElementById("next-btn").onclick = next;
   next();
