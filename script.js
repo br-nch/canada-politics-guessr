@@ -16,17 +16,15 @@ const PARTIES = [
     return '/photos/' + list[Math.floor(Math.random() * list.length)];
   }
 
-  async function findParty(filename) {
-    PARTIES.forEach(party => {
-        if (filename.includes(party.id)) return party.id;
-    });
-    return "ERROR";
-  }
+async function findParty(filename) {
+  const party = PARTIES.find(p => filename.includes(p.id));
+  return party ? party.id : "ERROR";
+}
 
   
   function next() {
-    const p = getRandomPhoto()
-    window.answer = findParty(p);
+    const p = await getRandomPhoto()
+    window.answer = await findParty(p);
     answered = false;
   
     document.getElementById("photo").src = p;
@@ -66,7 +64,7 @@ const PARTIES = [
     } else {
       streak = 0;
       const label = PARTIES.find(p => p.id === window.answer)?.label;
-      document.getElementById("feedback").textContent = `Nope — candidadte ran for ${label}.`;
+      document.getElementById("feedback").textContent = `Nope — candidate ran for ${label}.`;
     }
   
     document.getElementById("score").textContent = `${score} / ${total}`;
@@ -80,7 +78,7 @@ const PARTIES = [
     document.getElementById("score").textContent = "0 / 0";
     document.getElementById("streak").textContent = "0";
     document.getElementById("best").textContent = "0";
-    load();
+    next();
   }
 
 document.getElementById("reset-btn").onclick = reset
