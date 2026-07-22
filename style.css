@@ -121,24 +121,18 @@
    
   .feedback {
     font-size: 14px;
+    font-weight: 600;
     color: #555;
     min-height: 1.5rem;
     margin-bottom: 0.75rem;
   }
-   
-  .next-btn {
-    padding: 0.6rem 1.5rem;
-    border-radius: 8px;
-    border: 0.5px solid #ccc;
-    background: #fff;
-    color: #1a1a1a;
-    font-size: 14px;
-    cursor: pointer;
-    display: none;
+
+  .feedback.correct {
+    color: #1CA652;
   }
-   
-  .next-btn:hover {
-    background: #f5f5f3;
+
+  .feedback.wrong {
+    color: #E8332B;
   }
    
   .reset-btn {
@@ -150,3 +144,4 @@
     cursor: pointer;
     text-decoration: underline;
   }
+
