@@ -28,7 +28,7 @@ const PARTIES = [
 
   async function getRandomPhoto() {
     if (!photoList) {
-      const res = await fetch('/data/photos.json');
+      const res = await fetch('data/photos.json');
       photoList = await res.json();
     }
     if (deck.length === 0) {
@@ -40,7 +40,7 @@ const PARTIES = [
       }
     }
     lastPhoto = deck.pop();
-    return '/data/' + lastPhoto;
+    return 'data/' + lastPhoto;
   }
 
   function findParty(filename) {
